@@ -607,8 +607,8 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
             let title = app
                 .session
                 .active()
-                .map(|d| format!("{}{}", if show_name { d.doc.name.as_str() } else { "PhotoCraft" }, if d.is_dirty() { "  •" } else { "" }))
-                .unwrap_or_else(|| "PhotoCraft".into());
+                .map(|d| format!("{}{}", if show_name { d.doc.name.as_str() } else { "Nexus Photo Studio" }, if d.is_dirty() { "  •" } else { "" }))
+                .unwrap_or_else(|| "Nexus Photo Studio".into());
             // The menus and the far-end controls are laid out first; the title is centred in
             // whatever room is left between them (`free`, left to right: menus then controls, or
             // controls then menus in a right-to-left UI), shortened or dropped rather than drawn
@@ -651,6 +651,7 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                     let opts = [
                         // Keys stay English (`apply_workspace` matches them); the dropdown
                         // shows the labels in the UI language.
+                        ("Simple".to_string(), tl!("Simple")),
                         ("Essentials".to_string(), tl!("Essentials")),
                         ("Photography".to_string(), tl!("Photography")),
                         ("Painting".to_string(), tl!("Painting")),
