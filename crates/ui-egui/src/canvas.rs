@@ -2875,9 +2875,8 @@ fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 ui.horizontal(|ui| {
                     ui.add_space(((card.width() - 2.0 * button_width - HOME_BUTTON_GAP) / 2.0).max(0.0));
                     ui.spacing_mut().item_spacing.x = HOME_BUTTON_GAP;
-                    new_clicked = crate::widgets::primary_button(ui, &new_label, button_width)
-                        .on_hover_text(tl!("Start a new graphic with layers and text."))
-                        .clicked();
+                    new_clicked =
+                        crate::widgets::primary_button(ui, &new_label, button_width).on_hover_text(tl!("Start a new graphic with layers and text.")).clicked();
                     open_clicked = crate::widgets::secondary_button(ui, &open_label, button_width)
                         .on_hover_text(tl!("Open a photo, drawing or a layered Photoshop PSD."))
                         .clicked();
@@ -2904,8 +2903,11 @@ fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 ui.label(egui::RichText::new(msg).color(t.text_faint));
             });
             ui.add_space(12.0);
-            ui.label(egui::RichText::new(tl!("Tip: For ready-made effects, open an image and choose Filter › Filter Gallery (Trickkiste)."))
-                .color(t.text_faint).size(12.0));
+            ui.label(
+                egui::RichText::new(tl!("Tip: For ready-made effects, open an image and choose Filter › Filter Gallery (Trickkiste)."))
+                    .color(t.text_faint)
+                    .size(12.0),
+            );
             if !recent.is_empty() {
                 ui.add_space(22.0);
                 home_recent(app, ui, &recent);
