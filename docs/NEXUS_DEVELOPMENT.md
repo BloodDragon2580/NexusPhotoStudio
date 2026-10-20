@@ -1,6 +1,8 @@
 # Nexus Photo Studio – Entwicklung
 
-## Stand: 0.1 Alpha / 20. Oktober 2026
+## Stand: 0.2 Alpha / 20. Oktober 2026
+
+Der nächste Schritt baut auf der erfolgreich gestarteten portablen Windows-Alpha 0.1 auf. Die überarbeitete App erhält ein blau-violettes Objektiv-Icon, eine klarer benannte Startseite und die deutsche Trickkiste-Bezeichnung für die Filtergalerie.
 
 Der erste Schritt ist ein **Branchen-Fork** der PhotoCraft-Quellen mit
 eigenen Produkttexten, getrenntem Einstellungen-Ordner, eigener N-Marke,

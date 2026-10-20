@@ -1,11 +1,17 @@
 name: Nexus Photo Studio - Windows Alpha
 
-# Während der Alpha-Entwicklung nur manuell starten, um E-Mail-Spam zu vermeiden.
+# Ein Windows-Build startet nur auf ausdrückliche Anfrage durch Änderung
+# von .nexus-build-request. Keine Benachrichtigungsflut bei regulären Code-Änderungen.
 on:
+  push:
+    branches:
+      - nexus/alpha-improvements
+    paths:
+      - .nexus-build-request
   workflow_dispatch:
 
 concurrency:
-  group: nexus-alpha-branding
+  group: nexus-alpha-improvements
   cancel-in-progress: true
 
 permissions:
@@ -65,7 +71,7 @@ jobs:
             }
           }
           Copy-Item docs/NEXUS_DEVELOPMENT.md "$folder/ENTWICKLUNG.md"
-          Compress-Archive -Path "$folder/*" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.1-alpha-win64-portable.zip' -Force
+          Compress-Archive -Path "$folder/*" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.2-alpha-win64-portable.zip' -Force
 
       - name: Install Inno Setup 6
         shell: pwsh
@@ -85,7 +91,7 @@ jobs:
       - name: Upload alpha builds for manual testing
         uses: actions/upload-artifact@v4
         with:
-          name: NexusPhotoStudio-v0.1-alpha-Windows
+          name: NexusPhotoStudio-v0.2-alpha-Windows
           path: |
             dist/nexus/*win64-portable.zip
             dist/nexus/*win64-setup.exe

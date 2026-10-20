@@ -550,7 +550,7 @@
 	Save Selection…	Auswahl speichern…
 	Match All	Alle abgleichen
 	Last Filter	Letzter Filter
-	Filter Gallery…	Filtergalerie…
+	Filter Gallery…	Trickkiste (Filtergalerie)…
 	Adaptive Wide Angle…	Adaptiver Weitwinkel…
 	Camera Raw Filter…	Camera-Raw-Filter…
 	Liquify…	Verflüssigen…
@@ -1343,7 +1343,7 @@
 	Perspective Warp is not active	Perspektivische Verkrümmung ist nicht aktiv
 	Perspective Warp: draw planes along the image's perspective, then switch to Warp	Perspektivische Verkrümmung: zeichne Flächen entlang der Bildperspektive, wechsle dann zu Verkrümmen
 	Photo Filter	Foto-Filter
-	PhotoCraft	PhotoCraft
+	PhotoCraft	Nexus Photo Studio
 	PhotoCraft Manages Colors	PhotoCraft verwaltet die Farben
 	PhotoCraft — an open-source, native image editor written in Rust.	PhotoCraft — ein nativer Open-Source-Bildeditor, geschrieben in Rust.
 	Pin Depth:	Pin-Tiefe:
@@ -1760,7 +1760,7 @@
 	Pen Tool	Stift-Werkzeug
 	Convert Point Tool	Punkt-umwandeln-Werkzeug
 	Photo	Foto
-	PhotoCraft website	PhotoCraft-Website
+	PhotoCraft website	Nexus Photo Studio
 	Picas	Pica
 	Pillow Emboss	Polsterrelief
 	Pixel Replacement	Pixelersatz
@@ -3260,3 +3260,9 @@ curves	Smooth	Glätten
 	Nexus Photo Studio source code	Nexus Photo Studio – Quellcode
 	Nexus Community	Nexus-Community
 	PhotoCraft source	PhotoCraft – Originalprojekt
+
+# Nexus v0.2 start screen and novice tooltips
+	Create · Edit · Design	Erstellen · Bearbeiten · Gestalten
+	Start a new graphic with layers and text.	Neues Design mit Ebenen und Text erstellen.
+	Open a photo, drawing or a layered Photoshop PSD.	Fotos, Grafiken oder Photoshop-PSD-Dateien mit Ebenen öffnen.
+	Tip: For ready-made effects, open an image and choose Filter › Filter Gallery (Trickkiste).	Tipp: Bild öffnen und unter Filter › Trickkiste fertige Effekte auswählen.

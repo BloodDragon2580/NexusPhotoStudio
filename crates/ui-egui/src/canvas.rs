@@ -2861,19 +2861,12 @@ fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
     let side_by_side = 2.0 * button_width + HOME_BUTTON_GAP <= card_width;
     // Stacked buttons take one more row.
     let stacked_h = if side_by_side { 0.0 } else { 44.0 };
-    let card = Rect::from_center_size(area.center(), egui::vec2(card_width, 330.0 + recent_h + stacked_h));
+    let card = Rect::from_center_size(area.center(), egui::vec2(card_width, 357.0 + recent_h + stacked_h));
     ui.scope_builder(egui::UiBuilder::new().max_rect(card), |ui| {
         ui.vertical_centered(|ui| {
-            ui.horizontal(|ui| {
-                let title = ui.painter().layout_no_wrap(tl!("PhotoCraft").into(), crate::theme::semibold(38.0), t.text);
-                let by = ui.painter().layout_no_wrap(tl!("open source").into(), egui::FontId::proportional(13.0), t.text_faint);
-                let total = title.size().x + by.size().x + 10.0;
-                ui.add_space(((card.width() - total) / 2.0).max(0.0));
-                let (r, _) = ui.allocate_exact_size(title.size(), Sense::hover());
-                ui.painter().galley(r.min, title, t.text);
-                let (r2, _) = ui.allocate_exact_size(egui::vec2(by.size().x + 10.0, r.height()), Sense::hover());
-                ui.painter().galley(egui::pos2(r2.left() + 10.0, r.bottom() - by.size().y - 8.0), by, t.text_faint);
-            });
+            ui.label(egui::RichText::new("NEXUS PHOTO STUDIO").font(crate::theme::semibold(29.0)).color(t.text));
+            ui.add_space(3.0);
+            ui.label(egui::RichText::new(tl!("Create · Edit · Design")).color(t.text_dim).size(12.0));
             ui.add_space(6.0);
             ui.label(egui::RichText::new(tl!("Create a new document or open an existing file.")).color(t.text_dim).size(14.0));
             ui.add_space(22.0);
@@ -2882,8 +2875,12 @@ fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 ui.horizontal(|ui| {
                     ui.add_space(((card.width() - 2.0 * button_width - HOME_BUTTON_GAP) / 2.0).max(0.0));
                     ui.spacing_mut().item_spacing.x = HOME_BUTTON_GAP;
-                    new_clicked = crate::widgets::primary_button(ui, &new_label, button_width).clicked();
-                    open_clicked = crate::widgets::secondary_button(ui, &open_label, button_width).clicked();
+                    new_clicked = crate::widgets::primary_button(ui, &new_label, button_width)
+                        .on_hover_text(tl!("Start a new graphic with layers and text."))
+                        .clicked();
+                    open_clicked = crate::widgets::secondary_button(ui, &open_label, button_width)
+                        .on_hover_text(tl!("Open a photo, drawing or a layered Photoshop PSD."))
+                        .clicked();
                 });
             } else {
                 new_clicked = crate::widgets::primary_button(ui, &new_label, button_width).clicked();
@@ -2906,6 +2903,9 @@ fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 crate::icons::paint(ui, r, "image", 15.0, t.text_faint);
                 ui.label(egui::RichText::new(msg).color(t.text_faint));
             });
+            ui.add_space(12.0);
+            ui.label(egui::RichText::new(tl!("Tip: For ready-made effects, open an image and choose Filter › Filter Gallery (Trickkiste)."))
+                .color(t.text_faint).size(12.0));
             if !recent.is_empty() {
                 ui.add_space(22.0);
                 home_recent(app, ui, &recent);
