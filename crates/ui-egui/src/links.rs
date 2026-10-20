@@ -12,8 +12,7 @@ pub const GITHUB: &str = "https://github.com/BloodDragon2580/NexusPhotoStudio";
 pub const ISSUES: &str = "https://github.com/BloodDragon2580/NexusPhotoStudio/issues";
 
 /// Help-menu link commands: (id, url). Labels live in `menus::UI_COMMANDS`.
-pub const COMMANDS: &[(&str, &str)] =
-    &[("help.discord", DISCORD), ("help.website", APP_PAGE), ("help.github", GITHUB), ("help.reportIssue", ISSUES)];
+pub const COMMANDS: &[(&str, &str)] = &[("help.discord", DISCORD), ("help.website", APP_PAGE), ("help.github", GITHUB), ("help.reportIssue", ISSUES)];
 
 pub fn url_for(id: &str) -> Option<&'static str> {
     COMMANDS.iter().find(|c| c.0 == id).map(|c| c.1)

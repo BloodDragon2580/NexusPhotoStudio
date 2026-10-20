@@ -2903,11 +2903,7 @@ fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 ui.label(egui::RichText::new(msg).color(t.text_faint));
             });
             ui.add_space(12.0);
-            ui.label(
-                egui::RichText::new(tl!("Tip: Open a photo and use the magic-wand button for effects."))
-                    .color(t.text_faint)
-                    .size(12.0),
-            );
+            ui.label(egui::RichText::new(tl!("Tip: Open a photo and use the magic-wand button for effects.")).color(t.text_faint).size(12.0));
             if !recent.is_empty() {
                 ui.add_space(22.0);
                 home_recent(app, ui, &recent);
