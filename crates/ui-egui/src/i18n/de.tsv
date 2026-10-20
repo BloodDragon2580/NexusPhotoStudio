@@ -3250,3 +3250,13 @@ curves	Smooth	Glätten
 	DDS Options	DDS-Optionen
 	Compression	Komprimierung
 	Generate Mipmaps	Mipmaps erzeugen
+
+# Nexus Photo Studio user-facing strings
+	About Nexus Photo Studio	Über Nexus Photo Studio
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Nexus Photo Studio basiert auf PhotoCraft, einem Open-Source-Bildbearbeitungsprogramm in Rust.
+	Nexus Photo Studio Community…	Nexus-Community…
+	Nexus Photo Studio on GitHub	Nexus Photo Studio auf GitHub
+	PhotoCraft original project	Originalprojekt PhotoCraft
+	Nexus Photo Studio source code	Nexus Photo Studio – Quellcode
+	Nexus Community	Nexus-Community
+	PhotoCraft source	PhotoCraft – Originalprojekt
