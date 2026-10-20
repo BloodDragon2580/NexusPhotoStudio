@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - nexus/alpha-branding
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
+
+concurrency:
+  group: nexus-alpha-branding
+  cancel-in-progress: true
 
 permissions:
   contents: read
