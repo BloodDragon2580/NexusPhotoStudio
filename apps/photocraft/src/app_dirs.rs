@@ -652,7 +652,10 @@ mod tests {
         let platform = DataDir { dir: Some(settings.clone()), mode: Mode::Platform, warning: None };
         let xdg = !cfg!(windows) && !cfg!(target_os = "macos");
         let expect = |xdg_path: PathBuf| Some(if xdg { xdg_path } else { settings.join("Recovery") });
-        assert_eq!(resolve_recovery(&platform, env_of(&[("XDG_STATE_HOME", &state), ("HOME", &home)])), expect(state.join("nexusphotostudio").join("Recovery")));
+        assert_eq!(
+            resolve_recovery(&platform, env_of(&[("XDG_STATE_HOME", &state), ("HOME", &home)])),
+            expect(state.join("nexusphotostudio").join("Recovery"))
+        );
         let default = home.join(".local").join("state").join("nexusphotostudio").join("Recovery");
         assert_eq!(resolve_recovery(&platform, env_of(&[("HOME", &home)])), expect(default.clone()));
         let relative = PathBuf::from("relative/state");
