@@ -40,11 +40,11 @@ pub fn discord_button(app: &mut PhotocraftApp, ui: &mut egui::Ui, min_width: f32
     r
 }
 
-/// "PhotoCraft website · GitHub · ArtCraft" as links, centred. Clicks route through [`open`] (the
-/// platform browser service) rather than `ui.hyperlink_to`, which uses the unreliable `ctx.open_url`.
+/// Show Nexus-only links on the Home screen; license and upstream credits remain in About.
+/// Use the platform browser service instead of `ui.hyperlink_to`.
 pub fn link_row(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
     let t = crate::theme::Tokens::get(ui.ctx());
-    let links = [(tl!("Nexus Photo Studio"), APP_PAGE), (tl!("GitHub"), GITHUB), (tl!("PhotoCraft source"), ARTCRAFT_WEBSITE)];
+    let links = [(tl!("Project on GitHub"), GITHUB), (tl!("Report a problem"), ISSUES)];
     let font = egui::FontId::proportional(12.5);
     let sep = "  ·  ";
     let width: f32 = links.iter().map(|(l, _)| ui.painter().layout_no_wrap((*l).into(), font.clone(), t.text).size().x).sum::<f32>()
