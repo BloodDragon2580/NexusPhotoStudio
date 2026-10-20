@@ -57,6 +57,7 @@ fn proof_preset(id: &str) -> Option<&'static str> {
 fn workspace_name(id: &str) -> Option<&'static str> {
     Some(match id.strip_prefix("window.workspace.")? {
         "essentials" | "resetWorkspace" => "",
+        "simple" => "Simple",
         "photography" => "Photography",
         "painting" => "Painting",
         "graphicAndWeb" => "Graphic and Web",
@@ -1572,6 +1573,7 @@ pub fn apply_workspace(app: &mut PhotocraftApp) {
     app.ui.dock_tabs = Default::default();
     let p = &mut app.ui.panels;
     let (nav, color, layers, history, props) = match app.ui.workspace.as_str() {
+        "Simple" => (true, false, true, true, true),
         "Photography" => (true, false, true, true, true),
         "Painting" => (false, true, true, false, false),
         // Leave room for typography alongside Properties and Layers.
