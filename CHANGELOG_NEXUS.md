@@ -1,5 +1,14 @@
 # Nexus Photo Studio – Änderungen
 
+## 0.3 Alpha (Testversion)
+
+- Den Link „Originalprojekt“ vom Startbildschirm entfernt; Herkunftsnachweise weiterhin im Über-Dialog und in den Lizenzdateien.
+- Fenstertitel heißt auch ohne geöffnetes Bild „Nexus Photo Studio“.
+- Neuer Arbeitsbereich **Einfach** mit Navigator, Ebenen, Eigenschaften und Verlauf.
+- Startseitenlinks führen zum Nexus-Projekt und zur Fehlermeldungsseite.
+- Die bestehende PhotoCraft-Bildbearbeitungsengine samt PSD-Funktionen bleibt unangetastet.
+
+
 ## 0.2 Alpha (Windows-Testversion, noch nicht öffentlich freigegeben)
 
 - Eigenständiges, hochwertigeres blau-violettes Nexus-Icon mit stilisierter Kamerablende und Metall-N.
