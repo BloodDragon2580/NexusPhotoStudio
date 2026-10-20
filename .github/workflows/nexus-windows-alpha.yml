@@ -71,7 +71,7 @@ jobs:
             }
           }
           Copy-Item docs/NEXUS_DEVELOPMENT.md "$folder/ENTWICKLUNG.md"
-          Compress-Archive -Path "$folder/*" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.2-alpha-win64-portable.zip' -Force
+          Compress-Archive -Path "$folder/*" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.3-alpha-win64-portable.zip' -Force
 
       - name: Install Inno Setup 6
         shell: pwsh
@@ -91,7 +91,7 @@ jobs:
       - name: Upload alpha builds for manual testing
         uses: actions/upload-artifact@v4
         with:
-          name: NexusPhotoStudio-v0.2-alpha-Windows
+          name: NexusPhotoStudio-v0.3-alpha-Windows
           path: |
             dist/nexus/*win64-portable.zip
             dist/nexus/*win64-setup.exe
