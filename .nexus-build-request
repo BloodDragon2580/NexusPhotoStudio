@@ -1,1 +1,3 @@
-Nexus Photo Studio v0.2-alpha – build retry after rustfmt adjustments, 2026-10-20.
+Nexus Photo Studio v0.3-alpha – single Windows test build.
+Changes: remove upstream link on start, fix title bar, add Simple workspace.
+Build requested on 2026-10-20.
