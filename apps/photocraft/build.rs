@@ -13,10 +13,10 @@ fn main() {
     }
     let mut res = winresource::WindowsResource::new();
     res.set_icon("../../assets/app-icon/photocraft.ico")
-        .set("ProductName", "PhotoCraft")
-        .set("FileDescription", "PhotoCraft image editor")
-        .set("CompanyName", "Learning Machines LLC")
-        .set("LegalCopyright", "Copyright (c) the PhotoCraft authors. MIT OR Apache-2.0.")
+        .set("ProductName", "Nexus Photo Studio")
+        .set("FileDescription", "Nexus Photo Studio image editor")
+        .set("CompanyName", "Nexus Photo Studio Community")
+        .set("LegalCopyright", "PhotoCraft contributors (MIT OR Apache-2.0); Nexus Photo Studio contributors.")
         .set("OriginalFilename", "photocraft.exe")
         .set("InternalName", "photocraft");
     if let Err(e) = res.compile() {
