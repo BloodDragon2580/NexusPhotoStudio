@@ -1,9 +1,7 @@
 name: Nexus Photo Studio - Windows Alpha
 
+# Während der Alpha-Entwicklung nur manuell starten, um E-Mail-Spam zu vermeiden.
 on:
-  push:
-    branches:
-      - nexus/alpha-branding
   workflow_dispatch:
 
 concurrency:
