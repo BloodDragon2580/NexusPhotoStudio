@@ -1,6 +1,6 @@
 # Nexus Photo Studio – Entwicklung
 
-## Stand: 0.2 Alpha / 20. Oktober 2026
+## Stand: 0.3 Alpha / 20. Oktober 2026
 
 Der nächste Schritt baut auf der erfolgreich gestarteten portablen Windows-Alpha 0.1 auf. Die überarbeitete App erhält ein blau-violettes Objektiv-Icon, eine klarer benannte Startseite und die deutsche Trickkiste-Bezeichnung für die Filtergalerie.
 
@@ -53,3 +53,8 @@ Signatur/SmartScreen-Reputation und ein sicheres Update-Verfahren vorsehen.
 **Wichtig:** Die Bezeichnung Nexus Photo Studio muss vor öffentlicher
 Veröffentlichung markenrechtlich geprüft werden. Das Repository ist
 kein offizielles Projekt des PhotoCraft-/ArtCraft-Teams.
+
+## 0.3: Bedienung und Branding
+
+Auf der Startseite erscheinen jetzt nur noch eigene Nexus-Verknüpfungen. Die PhotoCraft-Herkunft bleibt im Über-Dialog sowie in NOTICE und den Lizenzdateien angegeben.
+Der Arbeitsbereich **Einfach** ergänzt die bestehenden Modi mit Navigator, Ebenen, Eigenschaften und Verlauf. Die Fenstertitelleiste zeigt nur noch den Nexus-Namen an.
