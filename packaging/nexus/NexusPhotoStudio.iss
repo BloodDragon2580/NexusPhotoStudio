@@ -1,7 +1,7 @@
 ; Nexus Photo Studio ALPHA - Windows Inno Setup 6.
 ; Built only after the source has received the original Nexus icons.
 #define AppName "Nexus Photo Studio"
-#define AppVersion "0.3.0-alpha"
+#define AppVersion "0.4.0-alpha"
 #define AppExe "NexusPhotoStudio.exe"
 
 [Setup]
@@ -13,7 +13,7 @@ AppPublisher=Nexus Photo Studio Community
 DefaultDirName={localappdata}\Programs\Nexus Photo Studio
 DefaultGroupName=Nexus Photo Studio
 OutputDir=..\..\dist\nexus
-OutputBaseFilename=NexusPhotoStudio-0.3-alpha-win64-setup
+OutputBaseFilename=NexusPhotoStudio-0.4-alpha-win64-setup
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern

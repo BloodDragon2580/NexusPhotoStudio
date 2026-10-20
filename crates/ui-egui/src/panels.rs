@@ -663,6 +663,7 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                     // (Preferences), then search (Edit › Search), and narrows the switcher
                     // (Window › Workspace) before anything runs over.
                     let room = ui.available_width();
+                    let gallery_shown = room >= WORKSPACE_MIN + 3.0 * ICON_SLOT;
                     let icons_shown: u8 = if room >= WORKSPACE_MIN + 2.0 * ICON_SLOT {
                         2
                     } else if room >= WORKSPACE_MIN + ICON_SLOT {
@@ -670,10 +671,25 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                     } else {
                         0
                     };
-                    let ws_width = (room - f32::from(icons_shown) * ICON_SLOT - 6.0).clamp(WORKSPACE_MIN, 130.0);
+                    let gallery_width = if gallery_shown { ICON_SLOT } else { 0.0 };
+                    let ws_width = (room - f32::from(icons_shown) * ICON_SLOT - gallery_width - 6.0).clamp(WORKSPACE_MIN, 130.0);
                     if room >= WORKSPACE_MIN && widgets::dropdown(ui, "workspace", &mut ws, &opts, ws_width) {
                         app.ui.workspace = ws;
                         crate::menus::apply_workspace(app);
+                    }
+                    if gallery_shown {
+                        let can_open = app.session.active().is_some() && crate::menus::is_enabled(app, "filter.filterGallery");
+                        let gallery = ui
+                            .add_enabled_ui(can_open, |ui| {
+                                icons::button(ui, "wand-sparkles", 28.0, app.distort.gallery.is_some(), tl!("Open the Trickkiste effects gallery"))
+                            })
+                            .inner;
+                        if gallery.clicked()
+                            && let Err(error) = crate::menus::invoke(app, ui.ctx(), "filter.filterGallery", json!({}))
+                        {
+                            app.ui.status = error;
+                            app.ui.status_error = true;
+                        }
                     }
                     if icons_shown >= 1
                         && icons::button(ui, "search", 28.0, app.ui.palette_open, &crate::shortcuts::tip_label(app, "Search commands", "edit.search")).clicked()

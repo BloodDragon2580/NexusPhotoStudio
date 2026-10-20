@@ -5,7 +5,7 @@ Open-Source-Projekt [PhotoCraft](https://github.com/storytold/photocraft) basier
 Ziel: eine einfach zu bedienende, moderne Bildbearbeitung mit Ebenen, Masken,
 PSD-Dateien, Retusche und Effekten – inspiriert von PhotoImpact und Photoshop.
 
-> **Status: 0.3 Alpha (Entwicklung).** Dieser Fork wird gerade umbenannt und
+> **Status: 0.4 Alpha (Entwicklung).** Dieser Fork wird gerade umbenannt und
 > getestet. Noch **keine** fertige oder geprüfte Community-Veröffentlichung.
 
 ## Erste Windows-Testversion bauen

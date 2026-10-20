@@ -2904,7 +2904,7 @@ fn start_screen(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
             });
             ui.add_space(12.0);
             ui.label(
-                egui::RichText::new(tl!("Tip: For ready-made effects, open an image and choose Filter › Filter Gallery (Trickkiste)."))
+                egui::RichText::new(tl!("Tip: Open a photo and use the magic-wand button for effects."))
                     .color(t.text_faint)
                     .size(12.0),
             );

@@ -1,5 +1,14 @@
 # Nexus Photo Studio – Änderungen
 
+## 0.4 Alpha – Trickkiste und Hilfe
+
+- Originalprojekt-Link aus dem Hilfe-Menü entfernt; Herkunft und Source-Link im Über-Dialog erhalten.
+- Zauberstab-Schnellzugriff auf die bereits funktionierende Trickkiste in der oberen Leiste (bei offenem Dokument).
+- Die Filtergalerie bietet echte Effektvorschauen, Kategorien, Parameter und Kombination mehrerer Effekte.
+- Deutsche Titel und Startseitenhinweise vereinfacht.
+- Keine neuen KI-Effekte oder eigenen PhotoImpact-Vorlagen behauptet.
+
+
 ## 0.3 Alpha (Testversion)
 
 - Den Link „Originalprojekt“ vom Startbildschirm entfernt; Herkunftsnachweise weiterhin im Über-Dialog und in den Lizenzdateien.

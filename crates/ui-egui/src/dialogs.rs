@@ -553,6 +553,9 @@ fn about_tab_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, tab: &str) {
         "models" => crate::credits::models_ui(ui),
         _ => {
             ui.label(tl!("Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor."));
+            if ui.link(tl!("Original PhotoCraft source code")).clicked() {
+                crate::links::open(app, ui.ctx(), crate::links::ARTCRAFT_WEBSITE);
+            }
             ui.label(crate::i18n::fmt(tl!("Version {version}"), &[("version", &photocraft_engine::build_info::long_version())]));
             ui.add_space(12.0);
             ui.vertical_centered(|ui| {

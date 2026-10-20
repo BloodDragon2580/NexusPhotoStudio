@@ -1,6 +1,6 @@
 # Nexus Photo Studio – Entwicklung
 
-## Stand: 0.3 Alpha / 20. Oktober 2026
+## Stand: 0.4 Alpha / 20. Oktober 2026
 
 Der nächste Schritt baut auf der erfolgreich gestarteten portablen Windows-Alpha 0.1 auf. Die überarbeitete App erhält ein blau-violettes Objektiv-Icon, eine klarer benannte Startseite und die deutsche Trickkiste-Bezeichnung für die Filtergalerie.
 
@@ -58,3 +58,17 @@ kein offizielles Projekt des PhotoCraft-/ArtCraft-Teams.
 
 Auf der Startseite erscheinen jetzt nur noch eigene Nexus-Verknüpfungen. Die PhotoCraft-Herkunft bleibt im Über-Dialog sowie in NOTICE und den Lizenzdateien angegeben.
 Der Arbeitsbereich **Einfach** ergänzt die bestehenden Modi mit Navigator, Ebenen, Eigenschaften und Verlauf. Die Fenstertitelleiste zeigt nur noch den Nexus-Namen an.
+
+## Nexus 0.4: Trickkiste und Quellenangaben
+
+Der Hilfemenüpunkt zum PhotoCraft-Original wurde entfernt. Der Originalquellcode
+ist weiterhin über „Über Nexus Photo Studio“ verlinkt, und NOTICE/ATTRIBUTION
+sowie die Open-Source-Lizenzen bleiben enthalten.
+
+Bei genügend Platz bietet die obere Leiste einen Zauberstab-Button zur
+Trickkiste. Ohne geöffnetes Dokument ist er deaktiviert. Die Trickkiste
+öffnet die bestehende funktionierende Filtergalerie mit echten Effektvorschauen,
+sechs Kategorien, einstellbaren Parametern und kombinierbaren Effekten.
+
+Ein vollständig eigenständiges PhotoImpact-Effektbibliotheks-Panel mit
+speicherbaren Nutzer-Favoriten ist ein späterer Ausbau.

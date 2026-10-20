@@ -85,7 +85,6 @@ pub const SHELL_COMMANDS: &[(&str, &str, &[&str], Option<&str>)] = &[
     ("edit.search", "Search…", &["Edit"], Some("Cmd+F")),
     ("help.discord", "Nexus Photo Studio Community…", &["Help"], None),
     ("help.website", "Nexus Photo Studio on GitHub", &["Help"], None),
-    ("help.artcraftWebsite", "PhotoCraft original project", &["Help"], None),
     ("help.github", "Nexus Photo Studio source code", &["Help"], None),
     ("help.reportIssue", "Report an Issue…", &["Help"], None),
     ("help.systemInfo", "System Info…", &["Help"], None),
