@@ -1,0 +1,94 @@
+name: Nexus Photo Studio - Windows Alpha
+
+on:
+  push:
+    branches:
+      - nexus/alpha-branding
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-alpha:
+    runs-on: windows-2022
+    timeout-minutes: 120
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v4
+
+      - name: Install current Rust toolchain
+        shell: pwsh
+        run: |
+          rustup update stable
+          rustup default stable
+          rustc --version
+          cargo --version
+
+      - name: Generate original Nexus artwork
+        shell: pwsh
+        run: |
+          python tools/generate_nexus_icons.py .
+          if ($LASTEXITCODE -ne 0) { throw "Nexus icons could not be generated" }
+          if (-not (Test-Path assets/app-icon/photocraft.ico)) { throw "Missing Windows app icon" }
+
+      - name: Verify Rust formatting
+        shell: pwsh
+        run: |
+          cargo fmt --all -- --check
+          if ($LASTEXITCODE -ne 0) { throw "Rust formatting failed" }
+
+      - name: Build photo editor for Windows
+        shell: pwsh
+        run: |
+          cargo build --release --locked -p photocraft
+          if ($LASTEXITCODE -ne 0) { throw "Rust Windows build failed" }
+          if (-not (Test-Path target/release/photocraft.exe)) { throw "No application executable found" }
+
+      - name: Prepare portable alpha with licenses
+        shell: pwsh
+        run: |
+          $folder = 'dist/nexus/portable'
+          New-Item -ItemType Directory -Path "$folder/Lizenzen" -Force | Out-Null
+          Copy-Item target/release/photocraft.exe "$folder/NexusPhotoStudio.exe"
+          New-Item -ItemType File -Path "$folder/portable.txt" -Force | Out-Null
+          foreach ($file in @('LICENSE-MIT','LICENSE-APACHE','NOTICE','ATTRIBUTION.md')) {
+            Copy-Item $file "$folder/Lizenzen"
+          }
+          foreach ($file in @('assets/fonts/OFL-Inter.txt','assets/fonts/OFL-JetBrainsMono.txt',
+              'assets/icons/LICENSE-lucide.txt','assets/dict/LICENSE-SCOWL.txt',
+              'crates/algo/data/LICENSE-libfacedetection.txt')) {
+            if (Test-Path $file) {
+              Copy-Item $file "$folder/Lizenzen"
+            }
+          }
+          Copy-Item docs/NEXUS_DEVELOPMENT.md "$folder/ENTWICKLUNG.md"
+          Compress-Archive -Path "$folder/*" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.1-alpha-win64-portable.zip' -Force
+
+      - name: Install Inno Setup 6
+        shell: pwsh
+        run: |
+          choco install innosetup --yes --no-progress
+          if ($LASTEXITCODE -ne 0) { throw "Inno Setup installation failed" }
+
+      - name: Create Windows installer
+        shell: pwsh
+        run: |
+          $iscc = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
+          if (-not (Test-Path $iscc)) { $iscc = 'C:\Program Files\Inno Setup 6\ISCC.exe' }
+          if (-not (Test-Path $iscc)) { throw "ISCC.exe not found" }
+          & $iscc packaging/nexus/NexusPhotoStudio.iss
+          if ($LASTEXITCODE -ne 0) { throw "Inno Setup build failed" }
+
+      - name: Upload alpha builds for manual testing
+        uses: actions/upload-artifact@v4
+        with:
+          name: NexusPhotoStudio-v0.1-alpha-Windows
+          path: |
+            dist/nexus/*win64-portable.zip
+            dist/nexus/*win64-setup.exe
+          if-no-files-found: error
+          retention-days: 14
