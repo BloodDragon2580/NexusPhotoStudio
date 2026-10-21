@@ -3856,3 +3856,20 @@ navigator	Zoom	Zvětšení
 # DDS Options (#1327)
 	DDS Options	Možnosti DDS
 	Generate Mipmaps	Generovat mipmapy
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	O aplikaci Nexus Photo Studio
+	Nexus Photo Studio Community…	Komunita Nexus Photo Studio…
+	Nexus Photo Studio on GitHub	Nexus Photo Studio na GitHubu
+	Nexus Photo Studio source code	Zdrojový kód Nexus Photo Studio
+	Create · Edit · Design	Vytvořit · Upravit · Navrhnout
+	Effects gallery	Galerie efektů
+	Nexus Community	Komunita Nexus
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Nexus Photo Studio vychází z PhotoCraftu, open-source editoru obrázků napsaného v Rustu.
+	Open a photo, drawing or a layered Photoshop PSD.	Otevřete fotografii, kresbu nebo soubor Photoshop PSD s vrstvami.
+	Open the Trickkiste effects gallery	Otevřít galerii efektů Trickkiste
+	Original PhotoCraft source code	Zdrojový kód původního PhotoCraftu
+	Project on GitHub	Projekt na GitHubu
+	Report a problem	Nahlásit problém
+	Start a new graphic with layers and text.	Vytvořte nový obrázek s vrstvami a textem.
+	Tip: Open a photo and use the magic-wand button for effects.	Tip: otevřete fotografii a použijte tlačítko kouzelné hůlky pro efekty.

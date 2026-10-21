@@ -4008,3 +4008,20 @@ curves	Smooth	Vloeiend maken
 # DDS Options (#1327)
 	DDS Options	DDS-opties
 	Generate Mipmaps	Mipmaps genereren
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	Over Nexus Photo Studio
+	Nexus Photo Studio Community…	Nexus Photo Studio-community…
+	Nexus Photo Studio on GitHub	Nexus Photo Studio op GitHub
+	Nexus Photo Studio source code	Broncode van Nexus Photo Studio
+	Create · Edit · Design	Maken · Bewerken · Ontwerpen
+	Effects gallery	Effectengalerij
+	Nexus Community	Nexus-community
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Nexus Photo Studio is gebaseerd op PhotoCraft, een opensource-afbeeldingseditor geschreven in Rust.
+	Open a photo, drawing or a layered Photoshop PSD.	Open een foto, tekening of Photoshop PSD-bestand met lagen.
+	Open the Trickkiste effects gallery	De Trickkiste-effectengalerij openen
+	Original PhotoCraft source code	Originele broncode van PhotoCraft
+	Project on GitHub	Project op GitHub
+	Report a problem	Een probleem melden
+	Start a new graphic with layers and text.	Maak een nieuwe afbeelding met lagen en tekst.
+	Tip: Open a photo and use the magic-wand button for effects.	Tip: open een foto en gebruik de toverstafknop voor effecten.

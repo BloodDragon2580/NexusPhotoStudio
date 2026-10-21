@@ -5,7 +5,7 @@ Open-Source-Projekt [PhotoCraft](https://github.com/storytold/photocraft) basier
 Ziel: eine einfach zu bedienende, moderne Bildbearbeitung mit Ebenen, Masken,
 PSD-Dateien, Retusche und Effekten – inspiriert von PhotoImpact und Photoshop.
 
-> **Status: 0.4 Alpha (Entwicklung).** Dieser Fork wird gerade umbenannt und
+> **Status: 0.5 Alpha (Entwicklung).** Dieser Fork wird gerade umbenannt und
 > getestet. Noch **keine** fertige oder geprüfte Community-Veröffentlichung.
 
 ## Erste Windows-Testversion bauen
@@ -45,6 +45,15 @@ Die genaue PSD-Fidelity und Stabilität müssen wir für Nexus mit echten
 Dokumenten verifizieren. Einen garantierten Photoshop-1:1-Ersatz stellt
 diese Alpha-Version **nicht** dar.
 
+## Werkzeug-Übersicht
+
+Die folgenden **67 Werkzeuge** lassen sich derzeit in der Bildbearbeitung auswählen.
+Die einzelnen englischen Werkzeugnamen stammen aus der Quellcode-Werkzeugliste;
+Nexus zeigt je nach Sprache übersetzte Bezeichnungen in der Oberfläche.
+
+<h4>🧰 67 tools</h4>
+Move · Artboard · Rectangular and Elliptical Marquee · Single Row Marquee · Single Column Marquee · Lasso · Polygonal Lasso · Magnetic Lasso · Object Selection · Quick Selection · Magic Wand · Crop · Perspective Crop · Slice · Slice Select · Frame · Eyedropper · Color Sampler · Ruler · Note · Count · Remove · Spot Healing Brush · Healing Brush · Patch · Content-Aware Move · Red Eye · Brush · Pencil · Mixer Brush · Color Replacement · Clone Stamp · Pattern Stamp · History Brush · Eraser · Background Eraser · Magic Eraser · Gradient · Paint Bucket · Blur · Sharpen · Smudge · Dodge · Burn · Sponge · Pen · Freeform Pen · Curvature Pen · Add Anchor Point · Delete Anchor Point · Convert Point · Horizontal and Vertical Type · Horizontal and Vertical Type Mask · Path Selection · Direct Selection · Rectangle · Ellipse · Triangle · Polygon · Line · Custom Shape · Hand · Rotate View · Zoom
+
 ## Nächste Entwicklungsschritte
 
 1. Eigene Marke, Dialoge, Icons und Installer unter Windows testen.
@@ -69,3 +78,23 @@ darum Nexus-Branding verwenden. Details: [Nexus Entwicklung](docs/NEXUS_DEVELOPM
 
 Bevor die Software öffentlich angeboten wird, sind eine Markenrecherche
 und die Prüfung aller verwendeten Assets notwendig.
+
+## Portable Version und Windows-Symbol
+
+Die portable ZIP enthält einen **versionierten Hauptordner** (z. B.
+`NexusPhotoStudio-0.5-alpha-portable`), sodass Windows nicht mehr das Icon
+früherer EXE-Dateien am selben Pfad verwenden sollte. Die EXE selbst muss
+auch das neue Nexus-Symbol eingebettet enthalten: der GitHub-Build prüft die
+Icon-Ressourcen in 16/24/32/48/64/128/256 Pixeln gegen die generierte .ico.
+Falls Windows ein altes Taskleisten-Symbol anzeigt: alte Verknüpfung lösen,
+neuen Versionsordner öffnen und die neue EXE erneut an die Taskleiste heften.
+
+## Ausgewählte upstream Fehlerbehebungen in 0.5
+
+- PhotoCraft PR #7948 (bereits upstream gemergt): PSB speichert 8-Byte-Blöcke
+  mit der korrekten `8B64`-Signatur, damit Photoshop sie lesen kann.
+- PhotoCraft PR #6918 (noch upstream offen): PageUp/-Down und Pfeiltasten
+  funktionieren wieder zuverlässig in gespeicherten Tastenkombinationen.
+- PhotoCraft PR #8137 (noch upstream offen): übersetzter Tooltip am
+  Textwerkzeug-Regler. Diese Fixes wurden gezielt in Nexus übernommen;
+  andere PRs folgen erst nach ihrer Einzelprüfung.

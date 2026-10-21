@@ -4167,3 +4167,20 @@ cameraRaw	Yellow	Sárga
 # DDS Options (#1327)
 	DDS Options	DDS-beállítások
 	Generate Mipmaps	Mipmapek létrehozása
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	A Nexus Photo Studio névjegye
+	Nexus Photo Studio Community…	Nexus Photo Studio közösség…
+	Nexus Photo Studio on GitHub	Nexus Photo Studio a GitHubon
+	Nexus Photo Studio source code	A Nexus Photo Studio forráskódja
+	Create · Edit · Design	Létrehozás · Szerkesztés · Tervezés
+	Effects gallery	Effektgaléria
+	Nexus Community	Nexus közösség
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	A Nexus Photo Studio a PhotoCraft nevű, Rust nyelven írt nyílt forráskódú képszerkesztőre épül.
+	Open a photo, drawing or a layered Photoshop PSD.	Nyisson meg egy fényképet, rajzot vagy rétegeket tartalmazó Photoshop PSD-fájlt.
+	Open the Trickkiste effects gallery	A Trickkiste effektgaléria megnyitása
+	Original PhotoCraft source code	Az eredeti PhotoCraft forráskódja
+	Project on GitHub	Projekt a GitHubon
+	Report a problem	Probléma bejelentése
+	Start a new graphic with layers and text.	Hozzon létre új képet rétegekkel és szöveggel.
+	Tip: Open a photo and use the magic-wand button for effects.	Tipp: nyisson meg egy fényképet, és használja a varázspálca gombot az effektekhez.

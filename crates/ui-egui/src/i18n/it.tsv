@@ -4365,3 +4365,20 @@ shape	Appearance	Aspetto
 # DDS Options (#1327)
 	DDS Options	Opzioni DDS
 	Generate Mipmaps	Genera mipmap
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	Informazioni su Nexus Photo Studio
+	Nexus Photo Studio Community…	Comunità di Nexus Photo Studio…
+	Nexus Photo Studio on GitHub	Nexus Photo Studio su GitHub
+	Nexus Photo Studio source code	Codice sorgente di Nexus Photo Studio
+	Create · Edit · Design	Crea · Modifica · Progetta
+	Effects gallery	Galleria degli effetti
+	Nexus Community	Comunità Nexus
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Nexus Photo Studio si basa su PhotoCraft, un editor di immagini open source scritto in Rust.
+	Open a photo, drawing or a layered Photoshop PSD.	Apri una foto, un disegno o un file PSD di Photoshop con livelli.
+	Open the Trickkiste effects gallery	Apri la galleria di effetti Trickkiste
+	Original PhotoCraft source code	Codice sorgente originale di PhotoCraft
+	Project on GitHub	Progetto su GitHub
+	Report a problem	Segnala un problema
+	Start a new graphic with layers and text.	Crea una nuova immagine con livelli e testo.
+	Tip: Open a photo and use the magic-wand button for effects.	Suggerimento: apri una foto e usa il pulsante bacchetta magica per gli effetti.
