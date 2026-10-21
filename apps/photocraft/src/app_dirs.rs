@@ -478,7 +478,7 @@ pub fn resolve(env: impl Fn(&str) -> Option<OsString>, exe_dir: Option<&Path>) -
 pub fn platform_dir(env: &impl Fn(&str) -> Option<OsString>) -> Option<PathBuf> {
     let home = env("HOME").filter(|h| !h.is_empty()).map(PathBuf::from);
     if cfg!(target_os = "macos") {
-        return home.map(|h| h.join("Library/Application Support/Photocraft"));
+        return home.map(|h| h.join("Library/Application Support/NexusPhotoStudio"));
     }
     if cfg!(windows) {
         return env("APPDATA").filter(|a| !a.is_empty()).map(|a| PathBuf::from(a).join("NexusPhotoStudio"));
@@ -542,11 +542,11 @@ mod tests {
         assert!(!exe.join(PORTABLE_DATA_DIR).exists(), "no portable folder without a marker");
         // The convention per platform.
         if cfg!(target_os = "macos") {
-            assert_eq!(dir, root.join("home/Library/Application Support/Photocraft"));
+            assert_eq!(dir, root.join("home/Library/Application Support/NexusPhotoStudio"));
         } else if cfg!(windows) {
             assert_eq!(dir, root.join("appdata").join("NexusPhotoStudio"));
         } else {
-            assert_eq!(dir, root.join("home/.config/photocraft"));
+            assert_eq!(dir, root.join("home/.config/nexusphotostudio"));
         }
         let _ = std::fs::remove_dir_all(&root);
     }
