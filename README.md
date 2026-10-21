@@ -45,6 +45,15 @@ Die genaue PSD-Fidelity und Stabilität müssen wir für Nexus mit echten
 Dokumenten verifizieren. Einen garantierten Photoshop-1:1-Ersatz stellt
 diese Alpha-Version **nicht** dar.
 
+## Werkzeug-Übersicht
+
+Die folgenden **67 Werkzeuge** lassen sich derzeit in der Bildbearbeitung auswählen.
+Die einzelnen englischen Werkzeugnamen stammen aus der Quellcode-Werkzeugliste;
+Nexus zeigt je nach Sprache übersetzte Bezeichnungen in der Oberfläche.
+
+<h4>🧰 67 tools</h4>
+Move · Artboard · Rectangular and Elliptical Marquee · Single Row Marquee · Single Column Marquee · Lasso · Polygonal Lasso · Magnetic Lasso · Object Selection · Quick Selection · Magic Wand · Crop · Perspective Crop · Slice · Slice Select · Frame · Eyedropper · Color Sampler · Ruler · Note · Count · Remove · Spot Healing Brush · Healing Brush · Patch · Content-Aware Move · Red Eye · Brush · Pencil · Mixer Brush · Color Replacement · Clone Stamp · Pattern Stamp · History Brush · Eraser · Background Eraser · Magic Eraser · Gradient · Paint Bucket · Blur · Sharpen · Smudge · Dodge · Burn · Sponge · Pen · Freeform Pen · Curvature Pen · Add Anchor Point · Delete Anchor Point · Convert Point · Horizontal and Vertical Type · Horizontal and Vertical Type Mask · Path Selection · Direct Selection · Rectangle · Ellipse · Triangle · Polygon · Line · Custom Shape · Hand · Rotate View · Zoom
+
 ## Nächste Entwicklungsschritte
 
 1. Eigene Marke, Dialoge, Icons und Installer unter Windows testen.
