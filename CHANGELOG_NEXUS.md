@@ -1,5 +1,15 @@
 # Nexus Photo Studio – Änderungen
 
+## 0.5 Alpha – Icon und upstream Bugfixes
+
+- Das nachweislich eingebettete Nexus-Icon wird im Build jetzt mit allen sieben Größen geprüft.
+- Native Windows-Ressourcen sind Pflicht, statt Fehler still zu ignorieren.
+- Die portable ZIP entpackt in einen versionierten Ordner (Schutz vor altem Windows-Icon-Cache).
+- PhotoCraft PR #7948: PSB/Photoshop-Signaturen für lange Metadatenblöcke korrigiert.
+- PhotoCraft PR #6918: PageUp/Down und Pfeiltasten bei Tastaturbelegungen repariert (noch nicht upstream gemergt).
+- PhotoCraft PR #8137: Tooltip im Textwerkzeug übersetzbar gemacht (noch nicht upstream gemergt).
+
+
 ## 0.4 Alpha – Trickkiste und Hilfe
 
 - Originalprojekt-Link aus dem Hilfe-Menü entfernt; Herkunft und Source-Link im Über-Dialog erhalten.

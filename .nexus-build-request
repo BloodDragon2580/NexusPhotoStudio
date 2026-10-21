@@ -1,1 +1,3 @@
-Nexus Photo Studio v0.4-alpha build retry after rustfmt corrections on 2026-10-20.
+Nexus Photo Studio v0.5-alpha: verified icon resources and versioned portable folder.
+Selected PhotoCraft PR backports: #7948 PSD/PSB, #6918 keyboard shortcuts, #8137 tooltip.
+Run the Windows build and targeted regression tests once.

@@ -1,6 +1,6 @@
 # Nexus Photo Studio – Entwicklung
 
-## Stand: 0.4 Alpha / 20. Oktober 2026
+## Stand: 0.5 Alpha / 20. Oktober 2026
 
 Der nächste Schritt baut auf der erfolgreich gestarteten portablen Windows-Alpha 0.1 auf. Die überarbeitete App erhält ein blau-violettes Objektiv-Icon, eine klarer benannte Startseite und die deutsche Trickkiste-Bezeichnung für die Filtergalerie.
 
@@ -72,3 +72,17 @@ sechs Kategorien, einstellbaren Parametern und kombinierbaren Effekten.
 
 Ein vollständig eigenständiges PhotoImpact-Effektbibliotheks-Panel mit
 speicherbaren Nutzer-Favoriten ist ein späterer Ausbau.
+
+## 0.5: Upstream-Backports und Icon-Validierung
+
+Gezielt übernommen: PhotoCraft PRs #7948 (gemergt, PSB-Signatur),
+#6918 (offen, Tastenkombinationen) und #8137 (offen, lokalisierte Tooltipps).
+Die zwei offenen PRs sind Backports unter Vorbehalt weiterer Tests.
+
+Die 0.4 EXE wurde auf PE-Ressourcenebene geprüft und enthält bereits das
+blau-violette Nexus-Symbol in sieben Größen. Deshalb sind alte Symbole auf dem
+Windows-Desktop vermutlich durch Windows-Symbolcache, alte Verknüpfungen
+oder einen veralteten Download verursacht. Das 0.5-Portable-Paket nutzt einen
+**eigenen Versionsordner**. `tools/verify_nexus_exe_icon.py` vergleicht
+im Windows-CI nun auch die tatsächliche EXE-Ressource mit dem neuen ICO.
+Die Winresource-Kompilierung darf nicht mehr nur warnen und weiterlaufen.
