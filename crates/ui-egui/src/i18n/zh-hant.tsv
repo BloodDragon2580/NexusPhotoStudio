@@ -2858,3 +2858,20 @@ curves	Smooth	平滑
 	DDS Options	DDS 選項
 	Compression	壓縮
 	Generate Mipmaps	產生 Mipmap
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	關於 Nexus Photo Studio
+	Nexus Photo Studio Community…	Nexus Photo Studio 社群…
+	Nexus Photo Studio on GitHub	GitHub 上的 Nexus Photo Studio
+	Nexus Photo Studio source code	Nexus Photo Studio 原始碼
+	Create · Edit · Design	建立 · 編輯 · 設計
+	Effects gallery	效果圖庫
+	Nexus Community	Nexus 社群
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Nexus Photo Studio 以 PhotoCraft 為基礎，這是一款使用 Rust 開發的開放原始碼影像編輯器。
+	Open a photo, drawing or a layered Photoshop PSD.	開啟照片、繪圖或含圖層的 Photoshop PSD 檔案。
+	Open the Trickkiste effects gallery	開啟 Trickkiste 效果圖庫
+	Original PhotoCraft source code	原版 PhotoCraft 原始碼
+	Project on GitHub	GitHub 上的專案
+	Report a problem	回報問題
+	Start a new graphic with layers and text.	建立含有圖層和文字的新影像。
+	Tip: Open a photo and use the magic-wand button for effects.	提示：開啟照片，然後點選魔術棒按鈕套用效果。

@@ -3431,3 +3431,20 @@ curves	Smooth	매끄럽게
 	DDS Options	DDS 옵션
 	Compression	압축
 	Generate Mipmaps	밉맵 생성
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	Nexus Photo Studio 정보
+	Nexus Photo Studio Community…	Nexus Photo Studio 커뮤니티…
+	Nexus Photo Studio on GitHub	GitHub의 Nexus Photo Studio
+	Nexus Photo Studio source code	Nexus Photo Studio 소스 코드
+	Create · Edit · Design	만들기 · 편집 · 디자인
+	Effects gallery	효과 갤러리
+	Nexus Community	Nexus 커뮤니티
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Nexus Photo Studio는 Rust로 작성된 오픈 소스 이미지 편집기 PhotoCraft를 기반으로 합니다.
+	Open a photo, drawing or a layered Photoshop PSD.	사진, 그림 또는 레이어가 포함된 Photoshop PSD 파일을 엽니다.
+	Open the Trickkiste effects gallery	Trickkiste 효과 갤러리 열기
+	Original PhotoCraft source code	원본 PhotoCraft 소스 코드
+	Project on GitHub	GitHub 프로젝트
+	Report a problem	문제 신고
+	Start a new graphic with layers and text.	레이어와 텍스트를 사용해 새 이미지를 만듭니다.
+	Tip: Open a photo and use the magic-wand button for effects.	팁: 사진을 열고 마술봉 버튼을 눌러 효과를 적용하세요.

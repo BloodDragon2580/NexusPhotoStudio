@@ -3736,3 +3736,20 @@ curves	Smooth	Làm mượt
 	DDS Options	Tùy chọn DDS
 	Compression	Nén
 	Generate Mipmaps	Tạo mipmap
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	Giới thiệu Nexus Photo Studio
+	Nexus Photo Studio Community…	Cộng đồng Nexus Photo Studio…
+	Nexus Photo Studio on GitHub	Nexus Photo Studio trên GitHub
+	Nexus Photo Studio source code	Mã nguồn Nexus Photo Studio
+	Create · Edit · Design	Tạo · Chỉnh sửa · Thiết kế
+	Effects gallery	Thư viện hiệu ứng
+	Nexus Community	Cộng đồng Nexus
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Nexus Photo Studio dựa trên PhotoCraft, một trình chỉnh sửa ảnh mã nguồn mở được viết bằng Rust.
+	Open a photo, drawing or a layered Photoshop PSD.	Mở ảnh, bản vẽ hoặc tệp Photoshop PSD có các lớp.
+	Open the Trickkiste effects gallery	Mở thư viện hiệu ứng Trickkiste
+	Original PhotoCraft source code	Mã nguồn PhotoCraft gốc
+	Project on GitHub	Dự án trên GitHub
+	Report a problem	Báo cáo sự cố
+	Start a new graphic with layers and text.	Tạo hình ảnh mới với các lớp và văn bản.
+	Tip: Open a photo and use the magic-wand button for effects.	Mẹo: mở ảnh rồi dùng nút đũa thần để áp dụng hiệu ứng.

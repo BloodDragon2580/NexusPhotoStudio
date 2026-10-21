@@ -3948,3 +3948,20 @@ curves	Smooth	Εξομάλυνση
 # DDS Options (#1327)
 	DDS Options	Επιλογές DDS
 	Generate Mipmaps	Δημιουργία mipmap
+
+# Nexus Photo Studio branding and welcome screen
+	About Nexus Photo Studio	Σχετικά με το Nexus Photo Studio
+	Nexus Photo Studio Community…	Κοινότητα Nexus Photo Studio…
+	Nexus Photo Studio on GitHub	Nexus Photo Studio στο GitHub
+	Nexus Photo Studio source code	Πηγαίος κώδικας του Nexus Photo Studio
+	Create · Edit · Design	Δημιουργία · Επεξεργασία · Σχεδίαση
+	Effects gallery	Συλλογή εφέ
+	Nexus Community	Κοινότητα Nexus
+	Nexus Photo Studio is based on PhotoCraft, an open-source Rust image editor.	Το Nexus Photo Studio βασίζεται στο PhotoCraft, ένα πρόγραμμα επεξεργασίας εικόνων ανοικτού κώδικα γραμμένο σε Rust.
+	Open a photo, drawing or a layered Photoshop PSD.	Ανοίξτε μια φωτογραφία, ένα σχέδιο ή ένα αρχείο Photoshop PSD με επίπεδα.
+	Open the Trickkiste effects gallery	Άνοιγμα της συλλογής εφέ Trickkiste
+	Original PhotoCraft source code	Πηγαίος κώδικας του αρχικού PhotoCraft
+	Project on GitHub	Έργο στο GitHub
+	Report a problem	Αναφορά προβλήματος
+	Start a new graphic with layers and text.	Δημιουργήστε μια νέα εικόνα με επίπεδα και κείμενο.
+	Tip: Open a photo and use the magic-wand button for effects.	Συμβουλή: ανοίξτε μια φωτογραφία και χρησιμοποιήστε το κουμπί μαγικού ραβδιού για εφέ.
