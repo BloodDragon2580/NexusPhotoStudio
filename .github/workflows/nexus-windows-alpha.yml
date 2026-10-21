@@ -85,13 +85,13 @@ jobs:
             }
           }
           Copy-Item docs/NEXUS_DEVELOPMENT.md "$folder/ENTWICKLUNG.md"
-          @'
-Nexus Photo Studio 0.5 Alpha – portable Windows test version
-Start by opening NexusPhotoStudio.exe from THIS versioned folder.
-If an old icon remains pinned to the taskbar, unpin the old shortcut
-and pin the new executable. Windows may cache icons by shortcut/path.
-Source and license details are included under Lizenzen/.
-'@ | Set-Content "$folder/START-HIER.txt" -Encoding UTF8
+          @(
+            'Nexus Photo Studio 0.5 Alpha - portable Windows test version',
+            'Start NexusPhotoStudio.exe from THIS new versioned folder.',
+            'If an old taskbar icon persists, unpin its shortcut and pin the new EXE.',
+            'Windows may cache icons by shortcut and executable path.',
+            'Open-source attribution and license notices are in Lizenzen/.'
+          ) | Set-Content "$folder/START-HIER.txt" -Encoding UTF8
           # Preserve the versioned top-level folder inside ZIP.
           Compress-Archive -Path "$folder" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.5-alpha-win64-portable.zip' -Force
 
