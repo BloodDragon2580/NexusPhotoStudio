@@ -18,21 +18,29 @@ use std::hash::{Hash, Hasher};
 struct GalleryFavorites(Vec<String>);
 
 impl GalleryFavorites {
-    fn contains(&self, filter: GalleryFilter) -> bool { self.0.iter().any(|key| key == filter.key()) }
+    fn contains(&self, filter: GalleryFilter) -> bool {
+        self.0.iter().any(|key| key == filter.key())
+    }
     fn toggle(&mut self, filter: GalleryFilter) {
-        if self.contains(filter) { self.0.retain(|key| key != filter.key()); }
-        else { self.0.push(filter.key().to_owned()); }
+        if self.contains(filter) {
+            self.0.retain(|key| key != filter.key());
+        } else {
+            self.0.push(filter.key().to_owned());
+        }
     }
     fn from_json(input: &str) -> Self {
         let keys: Vec<String> = serde_json::from_str(input).unwrap_or_default();
         Self(keys.into_iter().filter(|key| GalleryFilter::from_key(key).is_some()).take(128).collect())
     }
-    fn to_json(&self) -> String { serde_json::to_string(&self.0).unwrap_or_else(|_| "[]".into()) }
+    fn to_json(&self) -> String {
+        serde_json::to_string(&self.0).unwrap_or_else(|_| "[]".into())
+    }
 }
 
 #[cfg(not(target_arch = "wasm32"))]
 fn favorites_path() -> Option<std::path::PathBuf> {
-    let base = std::env::var_os("PHOTOCRAFT_CONFIG_DIR").map(std::path::PathBuf::from)
+    let base = std::env::var_os("PHOTOCRAFT_CONFIG_DIR")
+        .map(std::path::PathBuf::from)
         .or_else(|| {
             let exe = std::env::current_exe().ok()?;
             let folder = exe.parent()?;
@@ -61,7 +69,6 @@ fn save_favorites(favorites: &GalleryFavorites) -> Result<(), String> {
     }
     Ok(())
 }
-
 
 use egui::{Align2, Color32, FontId, Rect as ERect, Sense, Stroke, TextureHandle, pos2, vec2};
 use photocraft_algo::{FilterParams, GALLERY_CATEGORIES, GalleryFilter};
@@ -464,7 +471,9 @@ pub fn control(app: &mut PhotocraftApp, ui: &Value) -> Result<Value, String> {
         d.favorites.toggle(filter);
         save_favorites(&d.favorites)?;
     }
-    if let Some(show) = ui.get("showFavorites").and_then(Value::as_bool) { d.show_favorites = show; }
+    if let Some(show) = ui.get("showFavorites").and_then(Value::as_bool) {
+        d.show_favorites = show;
+    }
     if let Some(i) = ui.get("select").and_then(Value::as_u64) {
         d.selected = (i as usize).min(d.effects.len() - 1);
     }
@@ -735,10 +744,14 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
         let mut mu = ui.new_child(egui::UiBuilder::new().max_rect(mid.shrink2(vec2(8.0, 8.0))));
         egui::ScrollArea::vertical().id_salt("gallery-tree").show(&mut mu, |ui| {
             ui.horizontal(|ui| {
-                if ui.selectable_label(d.show_favorites, "★ Favoriten / Favorites").clicked() { d.show_favorites = !d.show_favorites; }
+                if ui.selectable_label(d.show_favorites, "★ Favoriten / Favorites").clicked() {
+                    d.show_favorites = !d.show_favorites;
+                }
             });
             for (ci, cat) in GALLERY_CATEGORIES.iter().enumerate() {
-                if d.show_favorites && !GalleryFilter::ALL.iter().any(|f| f.category() == *cat && d.favorites.contains(*f)) { continue; }
+                if d.show_favorites && !GalleryFilter::ALL.iter().any(|f| f.category() == *cat && d.favorites.contains(*f)) {
+                    continue;
+                }
                 let icon = if d.open[ci] { "folder-open" } else { "folder" };
                 let r = ui.horizontal(|ui| {
                     let (ir, _) = ui.allocate_exact_size(vec2(16.0, 16.0), Sense::hover());
@@ -752,7 +765,12 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                 if !d.open[ci] {
                     continue;
                 }
-                let members: Vec<(usize, GalleryFilter)> = GalleryFilter::ALL.iter().copied().enumerate().filter(|(_, f)| f.category() == *cat && (!d.show_favorites || d.favorites.contains(*f))).collect();
+                let members: Vec<(usize, GalleryFilter)> = GalleryFilter::ALL
+                    .iter()
+                    .copied()
+                    .enumerate()
+                    .filter(|(_, f)| f.category() == *cat && (!d.show_favorites || d.favorites.contains(*f)))
+                    .collect();
                 egui::Grid::new(format!("gallery-cat-{ci}")).spacing([6.0, 6.0]).show(ui, |ui| {
                     for (n, (i, f)) in members.iter().enumerate() {
                         let selected = d.effects.get(d.selected).is_some_and(|e| e.filter == *f);
@@ -777,9 +795,12 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                         if cell.inner.clicked() {
                             d.set_filter(*f);
                         }
-                        if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" }).on_hover_text("Favorit umschalten / Toggle favorite").clicked() {
+                        if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" }).on_hover_text("Favorit umschalten / Toggle favorite").clicked()
+                        {
                             d.favorites.toggle(*f);
-                            if let Err(e) = save_favorites(&d.favorites) { log::warn!("Could not save gallery favorites: {e}"); }
+                            if let Err(e) = save_favorites(&d.favorites) {
+                                log::warn!("Could not save gallery favorites: {e}");
+                            }
                         }
                         if n % 3 == 2 {
                             ui.end_row();
