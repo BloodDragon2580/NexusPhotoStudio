@@ -1,6 +1,8 @@
 # Nexus Photo Studio – Entwicklung
 
-## Stand: 0.5 Alpha / 20. Oktober 2026
+## Stand: 0.6 Alpha – Test-Build / 23. Oktober 2026
+
+Die Trickkiste unterstützt jetzt dauerhaft gespeicherte Effektfavoriten und eine Favoritenansicht. Die Windows-0.6-Testversion wird getrennt von der vorhandenen 0.5-Portable-Version gebaut. Der CI-Build muss vor einer Freigabe erfolgreich sein.
 
 Der nächste Schritt baut auf der erfolgreich gestarteten portablen Windows-Alpha 0.1 auf. Die überarbeitete App erhält ein blau-violettes Objektiv-Icon, eine klarer benannte Startseite und die deutsche Trickkiste-Bezeichnung für die Filtergalerie.
 
