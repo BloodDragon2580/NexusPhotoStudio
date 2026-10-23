@@ -5,13 +5,13 @@ name: Nexus Photo Studio - Windows Alpha
 on:
   push:
     branches:
-      - nexus/upstream-fixes-icon
+      - nexus/06-windows-alpha-build
     paths:
       - .nexus-build-request
   workflow_dispatch:
 
 concurrency:
-  group: nexus-upstream-fixes-icon
+  group: nexus-06-windows-alpha-build
   cancel-in-progress: true
 
 permissions:
@@ -56,6 +56,12 @@ jobs:
           python tools/verify_nexus_exe_icon.py target/release/photocraft.exe assets/app-icon/photocraft.ico
           if ($LASTEXITCODE -ne 0) { throw "Built EXE does not contain the Nexus icon" }
 
+      - name: Nexus gallery favorites regression test
+        shell: pwsh
+        run: |
+          cargo test --locked -p photocraft-ui-egui --lib favorites_toggle_and_ignore_unknown_saved_filters
+          if ($LASTEXITCODE -ne 0) { throw "Nexus favorites regression test failed" }
+
       - name: Targeted upstream regression tests
         shell: pwsh
         run: |
@@ -70,7 +76,7 @@ jobs:
         shell: pwsh
         run: |
           # A new folder path avoids Explorer showing an old cached/pinned icon.
-          $folder = 'dist/nexus/NexusPhotoStudio-0.5-alpha-portable'
+          $folder = 'dist/nexus/NexusPhotoStudio-0.6-alpha-portable'
           New-Item -ItemType Directory -Path "$folder/Lizenzen" -Force | Out-Null
           Copy-Item target/release/photocraft.exe "$folder/NexusPhotoStudio.exe"
           New-Item -ItemType File -Path "$folder/portable.txt" -Force | Out-Null
@@ -86,14 +92,14 @@ jobs:
           }
           Copy-Item docs/NEXUS_DEVELOPMENT.md "$folder/ENTWICKLUNG.md"
           @(
-            'Nexus Photo Studio 0.5 Alpha - portable Windows test version',
+            'Nexus Photo Studio 0.6 Alpha - portable Windows test version',
             'Start NexusPhotoStudio.exe from THIS new versioned folder.',
             'If an old taskbar icon persists, unpin its shortcut and pin the new EXE.',
             'Windows may cache icons by shortcut and executable path.',
             'Open-source attribution and license notices are in Lizenzen/.'
           ) | Set-Content "$folder/START-HIER.txt" -Encoding UTF8
           # Preserve the versioned top-level folder inside ZIP.
-          Compress-Archive -Path "$folder" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.5-alpha-win64-portable.zip' -Force
+          Compress-Archive -Path "$folder" -DestinationPath 'dist/nexus/NexusPhotoStudio-0.6-alpha-win64-portable.zip' -Force
 
       - name: Install Inno Setup 6
         shell: pwsh
@@ -113,7 +119,7 @@ jobs:
       - name: Upload alpha builds for manual testing
         uses: actions/upload-artifact@v4
         with:
-          name: NexusPhotoStudio-v0.5-alpha-Windows
+          name: NexusPhotoStudio-v0.6-alpha-Windows
           path: |
             dist/nexus/*win64-portable.zip
             dist/nexus/*win64-setup.exe
