@@ -6,12 +6,14 @@ on:
   push:
     branches:
       - nexus/06-windows-alpha-build
+      - nexus/alpha-trickkiste
     paths:
       - .nexus-build-request
   workflow_dispatch:
 
 concurrency:
   group: nexus-06-windows-alpha-build
+  group: nexus-alpha-06
   cancel-in-progress: true
 
 permissions:
@@ -61,6 +63,11 @@ jobs:
         run: |
           cargo test --locked -p photocraft-ui-egui --lib favorites_toggle_and_ignore_unknown_saved_filters
           if ($LASTEXITCODE -ne 0) { throw "Nexus favorites regression test failed" }
+      - name: Nexus favorites regression test
+        shell: pwsh
+        run: |
+          cargo test --locked -p photocraft-ui-egui --lib favorites_toggle_and_ignore_unknown_saved_filters
+          if ($LASTEXITCODE -ne 0) { throw "Gallery favorites test failed" }
 
       - name: Targeted upstream regression tests
         shell: pwsh
