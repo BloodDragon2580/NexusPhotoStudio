@@ -653,7 +653,7 @@ fn start_job(d: &mut GalleryDialog, ctx: &egui::Context, key: u64, vis: Rect, k:
 fn update_thumbs(d: &mut GalleryDialog, ctx: &egui::Context, budget: usize) {
     let mut done = 0;
     for (i, f) in GalleryFilter::ALL.iter().enumerate() {
-        if d.thumbs[i].is_some() || !d.open[GALLERY_CATEGORIES.iter().position(|c| *c == f.category()).unwrap_or(0)] {
+        if d.thumbs[i].is_some() || (!d.show_favorites && !d.open[GALLERY_CATEGORIES.iter().position(|c| *c == f.category()).unwrap_or(0)]) || (d.show_favorites && !d.favorites.contains(*f)) {
             continue;
         }
         if done == budget {
@@ -762,7 +762,7 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                 if r.inner.clicked() {
                     d.open[ci] = !d.open[ci];
                 }
-                if !d.open[ci] {
+                if !d.open[ci] && !d.show_favorites {
                     continue;
                 }
                 let members: Vec<(usize, GalleryFilter)> = GalleryFilter::ALL
@@ -774,7 +774,7 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                 egui::Grid::new(format!("gallery-cat-{ci}")).spacing([6.0, 6.0]).show(ui, |ui| {
                     for (n, (i, f)) in members.iter().enumerate() {
                         let selected = d.effects.get(d.selected).is_some_and(|e| e.filter == *f);
-                        let cell = ui.vertical(|ui| {
+                        ui.vertical(|ui| {
                             let (r, resp) = ui.allocate_exact_size(vec2(THUMB[0] as f32, THUMB[1] as f32), Sense::click());
                             match &d.thumbs[*i] {
                                 Some(tex) => {
@@ -790,18 +790,17 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                                 [THUMB[0] as f32, 14.0],
                                 egui::Label::new(egui::RichText::new(tl!(f.name())).size(10.5).color(if selected { t.text } else { t.text_dim })).truncate(),
                             );
-                            resp
-                        });
-                        if cell.inner.clicked() {
-                            d.set_filter(*f);
-                        }
-                        if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" }).on_hover_text("Favorit umschalten / Toggle favorite").clicked()
+                            if resp.clicked() {
+                                d.set_filter(*f);
+                            }
+                            if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" }).on_hover_text("Favorit umschalten / Toggle favorite").clicked()
                         {
                             d.favorites.toggle(*f);
                             if let Err(e) = save_favorites(&d.favorites) {
                                 log::warn!("Could not save gallery favorites: {e}");
                             }
-                        }
+                            }
+                        });
                         if n % 3 == 2 {
                             ui.end_row();
                         }
