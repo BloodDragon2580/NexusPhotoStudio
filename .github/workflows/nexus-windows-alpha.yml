@@ -13,7 +13,6 @@ on:
 
 concurrency:
   group: nexus-06-windows-alpha-build
-  group: nexus-alpha-06
   cancel-in-progress: true
 
 permissions:
