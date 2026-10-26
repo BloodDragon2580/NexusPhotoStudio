@@ -793,12 +793,14 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                             if resp.clicked() {
                                 d.set_filter(*f);
                             }
-                            if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" }).on_hover_text("Favorit umschalten / Toggle favorite").clicked()
-                        {
-                            d.favorites.toggle(*f);
-                            if let Err(e) = save_favorites(&d.favorites) {
-                                log::warn!("Could not save gallery favorites: {e}");
-                            }
+                            if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" })
+                                .on_hover_text("Favorit umschalten / Toggle favorite")
+                                .clicked()
+                            {
+                                d.favorites.toggle(*f);
+                                if let Err(e) = save_favorites(&d.favorites) {
+                                    log::warn!("Could not save gallery favorites: {e}");
+                                }
                             }
                         });
                         if n % 3 == 2 {
