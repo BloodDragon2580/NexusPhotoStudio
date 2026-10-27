@@ -5,13 +5,14 @@ name: Nexus Photo Studio - Windows Alpha
 on:
   push:
     branches:
+      - nexus/06-windows-alpha-build
       - nexus/alpha-trickkiste
     paths:
       - .nexus-build-request
   workflow_dispatch:
 
 concurrency:
-  group: nexus-alpha-06
+  group: nexus-06-windows-alpha-build
   cancel-in-progress: true
 
 permissions:
@@ -56,6 +57,11 @@ jobs:
           python tools/verify_nexus_exe_icon.py target/release/photocraft.exe assets/app-icon/photocraft.ico
           if ($LASTEXITCODE -ne 0) { throw "Built EXE does not contain the Nexus icon" }
 
+      - name: Nexus gallery favorites regression test
+        shell: pwsh
+        run: |
+          cargo test --locked -p photocraft-ui-egui --lib favorites_toggle_and_ignore_unknown_saved_filters
+          if ($LASTEXITCODE -ne 0) { throw "Nexus favorites regression test failed" }
       - name: Nexus favorites regression test
         shell: pwsh
         run: |
