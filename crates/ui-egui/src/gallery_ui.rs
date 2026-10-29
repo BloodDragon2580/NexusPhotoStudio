@@ -653,7 +653,10 @@ fn start_job(d: &mut GalleryDialog, ctx: &egui::Context, key: u64, vis: Rect, k:
 fn update_thumbs(d: &mut GalleryDialog, ctx: &egui::Context, budget: usize) {
     let mut done = 0;
     for (i, f) in GalleryFilter::ALL.iter().enumerate() {
-        if d.thumbs[i].is_some() || (!d.show_favorites && !d.open[GALLERY_CATEGORIES.iter().position(|c| *c == f.category()).unwrap_or(0)]) || (d.show_favorites && !d.favorites.contains(*f)) {
+        if d.thumbs[i].is_some()
+            || (!d.show_favorites && !d.open[GALLERY_CATEGORIES.iter().position(|c| *c == f.category()).unwrap_or(0)])
+            || (d.show_favorites && !d.favorites.contains(*f))
+        {
             continue;
         }
         if done == budget {
@@ -793,9 +796,7 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                             if resp.clicked() {
                                 d.set_filter(*f);
                             }
-                            if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" })
-                                .on_hover_text("Favorit umschalten / Toggle favorite")
-                                .clicked()
+                            if ui.small_button(if d.favorites.contains(*f) { "★" } else { "☆" }).on_hover_text("Favorit umschalten / Toggle favorite").clicked()
                             {
                                 d.favorites.toggle(*f);
                                 if let Err(e) = save_favorites(&d.favorites) {
