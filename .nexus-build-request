@@ -5,3 +5,5 @@ Retry Windows 0.5 Alpha after fixing GitHub YAML indentation; 2026-10-21.
 
 Nexus Photo Studio 0.6 Alpha: build Windows portable and installer with gallery favorites, 2026-10-23.
 Build request 2026-10-24: Nexus Photo Studio 0.6 Alpha Windows EXE, portable ZIP and installer with favorites.
+
+Build request 2026-10-29: rebuild Nexus Photo Studio 0.6 Alpha Windows portable ZIP and installer after PR #4 and PR #5 merged (commit fda7cc1).
